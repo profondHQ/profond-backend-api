@@ -1,8 +1,8 @@
-import { Controller, Get, Post, Body, Query } from '@nestjs/common';
-import { CollectionService } from './collection.service';
-import { CreateCollectionDto } from './dto/create-collection.dto';
+import { Controller, Get, Post, Body, Query } from "@nestjs/common";
+import { CollectionService } from "./collection.service";
+import { CreateCollectionDto } from "./dto/create-collection.dto";
 
-@Controller('collections')
+@Controller("collections")
 export class CollectionController {
   constructor(private readonly collectionService: CollectionService) {}
 
@@ -12,7 +12,7 @@ export class CollectionController {
   }
 
   @Get()
-  findAll(@Query('owner_address') owner_address?: string) {
+  findAll(@Query("owner_address") owner_address?: string) {
     return this.collectionService.findAll(owner_address);
   }
 }
