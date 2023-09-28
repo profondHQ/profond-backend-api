@@ -1,5 +1,5 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { HydratedDocument } from "mongoose";
 
 export type CollectionDocument = HydratedDocument<Collection>;
 
@@ -40,6 +40,9 @@ export class Collection {
 
   @Prop({ required: true })
   launchpad_treasury: string;
+
+  @Prop()
+  chain: string;
 }
 
 export const CollectionSchema = SchemaFactory.createForClass(Collection);

@@ -6,7 +6,10 @@ export class CollectionController {
   constructor(private readonly collectionService: CollectionService) { }
 
   @Get()
-  findAll(@Query("owner_address") owner_address?: string) {
-    return this.collectionService.findAll(owner_address);
+  findAll(
+    @Query("owner_address") owner_address?: string,
+    @Query("chain") chain?: string
+  ) {
+    return this.collectionService.findAll(owner_address, chain);
   }
 }

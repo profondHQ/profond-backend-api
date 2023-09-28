@@ -8,4 +8,5 @@ export class Coin {
   is_pausable: boolean;
   is_mintable: boolean;
   is_burnable: boolean;
+  chain: string;
 }

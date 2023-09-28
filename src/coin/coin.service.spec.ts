@@ -22,7 +22,8 @@ describe("CoinService", () => {
     total_supply: 10000,
     is_pausable: true,
     is_mintable: true,
-    is_burnable: true
+    is_burnable: true,
+    chain: "chain"
   };
 
   beforeAll(async () => {
@@ -51,6 +52,7 @@ describe("CoinService", () => {
     expect(result.is_pausable).toBe(newCoin.is_pausable);
     expect(result.is_mintable).toBe(newCoin.is_mintable);
     expect(result.is_burnable).toBe(newCoin.is_burnable);
+    expect(result.chain).toBe(newCoin.chain);
   });
 
   it("should return collection for filtered minter_address", async () => {

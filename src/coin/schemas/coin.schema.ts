@@ -1,5 +1,5 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { HydratedDocument } from "mongoose";
 
 export type CoinDocument = HydratedDocument<Coin>;
 
@@ -31,6 +31,9 @@ export class Coin {
 
   @Prop({ required: true })
   is_burnable: boolean;
+
+  @Prop()
+  chain: string;
 }
 
 export const CoinSchema = SchemaFactory.createForClass(Coin);

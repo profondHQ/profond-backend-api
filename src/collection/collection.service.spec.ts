@@ -25,7 +25,8 @@ describe("CollectionService", () => {
     public_sale_end_at: 100,
     launchpad_fee: 1,
     project_treasury: "project_treasury",
-    launchpad_treasury: "launchpad_treasury"
+    launchpad_treasury: "launchpad_treasury",
+    chain: "chain"
   };
 
   beforeAll(async () => {
@@ -60,6 +61,7 @@ describe("CollectionService", () => {
     expect(result.launchpad_fee).toBe(newCollection.launchpad_fee);
     expect(result.project_treasury).toBe(newCollection.project_treasury);
     expect(result.launchpad_treasury).toBe(newCollection.launchpad_treasury);
+    expect(result.chain).toBe(newCollection.chain);
   });
 
   it("should return collection for filtered owner_address", async () => {

@@ -11,4 +11,5 @@ export class CreateCollectionDto {
   launchpad_fee: number;
   project_treasury: string;
   launchpad_treasury: string;
+  chain: string;
 }
