@@ -10,9 +10,9 @@ import { PostgresModule } from "./postgres/postgres.module";
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGODB_URL),
-    CoinModule,
-    CollectionModule,
+    // MongooseModule.forRoot(process.env.MONGODB_URL),
+    // CoinModule,
+    // CollectionModule,
     StatsModule,
     PostgresModule
   ],
