@@ -6,7 +6,7 @@ import { Model } from "mongoose";
 
 @Injectable()
 export class CoinService {
-  constructor(@InjectModel(Coin.name) private coinModel: Model<Coin>) { }
+  constructor(@InjectModel(Coin.name) private coinModel: Model<Coin>) {}
 
   create(createCoinDto: CreateCoinDto): Promise<Coin> {
     const createdCoin = new this.coinModel(createCoinDto);

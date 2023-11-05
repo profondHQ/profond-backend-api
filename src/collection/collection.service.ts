@@ -8,7 +8,7 @@ import { Model } from "mongoose";
 export class CollectionService {
   constructor(
     @InjectModel(Collection.name) private collectionModel: Model<Collection>
-  ) { }
+  ) {}
 
   create(createCollectionDto: CreateCollectionDto): Promise<Collection> {
     const createdCollection = new this.collectionModel(createCollectionDto);
