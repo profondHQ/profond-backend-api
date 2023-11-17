@@ -13,7 +13,11 @@ export class CoinService {
     return createdCoin.save();
   }
 
-  findAll(minter_address?: string, chain?: string): Promise<Coin[]> {
+  findAll(
+    minter_address?: string,
+    chain?: string,
+    is_on_sale?: string
+  ): Promise<Coin[]> {
     let matchQuery = {};
     if (minter_address) {
       matchQuery = { minter_address: minter_address };
@@ -21,6 +25,10 @@ export class CoinService {
 
     if (chain) {
       matchQuery = { chain: chain, ...matchQuery };
+    }
+
+    if (is_on_sale === "true") {
+      matchQuery = { sale_price: { $exists: true }, ...matchQuery };
     }
 
     return this.coinModel.find(matchQuery).select({ _id: 0, __v: 0 });

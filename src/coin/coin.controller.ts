@@ -9,7 +9,8 @@ export class CoinController {
   findAll(
     @Query("minter_address") minter_address?: string,
     @Query("chain") chain?: string
+    @Query("is_on_sale") is_on_sale?: string
   ) {
-    return this.coinService.findAll(minter_address, chain);
+    return this.coinService.findAll(minter_address, chain, is_on_sale);
   }
 }
