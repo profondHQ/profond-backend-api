@@ -28,7 +28,7 @@ export class CoinService {
     }
 
     if (is_on_sale === "true") {
-      matchQuery = { sale_price: { $exists: true }, ...matchQuery };
+      matchQuery = { sale_rate: { $exists: true }, ...matchQuery };
     }
 
     return this.coinModel.find(matchQuery).select({ _id: 0, __v: 0 });
