@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
 import { StatsService } from "./stats.service";
 import { StatsController } from "./stats.controller";
-import { PostgresModule } from "src/postgres/postgres.module";
+import { PostgresModule } from "../postgres/postgres.module";
 
 @Module({
   controllers: [StatsController],
   providers: [StatsService],
   imports: [PostgresModule]
 })
-export class StatsModule {}
+export class StatsModule { }

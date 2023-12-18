@@ -5,6 +5,7 @@ import { MongoMemoryServer } from "mongodb-memory-server";
 import { CoinSchema } from "./schemas/coin.schema";
 import { getModelToken } from "@nestjs/mongoose";
 import { Coin } from "./schemas/coin.schema";
+import { doesNotMatch } from "assert";
 
 describe("CoinService", () => {
   let service: CoinService;
@@ -41,6 +42,12 @@ describe("CoinService", () => {
     }).compile();
 
     service = module.get<CoinService>(CoinService);
+  });
+
+  afterAll((done) => {
+    mongod.stop();
+    mongoConnection.destroy();
+    done();
   });
 
   it("should return object after create", async () => {

@@ -27,6 +27,12 @@ describe("StatsService", () => {
     }).compile();
 
     service = module.get<StatsService>(StatsService);
+    return;
+  });
+
+  afterAll((done) => {
+    pg.end();
+    done();
   });
 
   it("coinStats works", async () => {

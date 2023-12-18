@@ -44,6 +44,13 @@ describe("CollectionService", () => {
     }).compile();
 
     service = module.get<CollectionService>(CollectionService);
+    return service;
+  });
+
+  afterAll((done) => {
+    mongod.stop();
+    mongoConnection.destroy();
+    done();
   });
 
   it("should return object after create", async () => {
