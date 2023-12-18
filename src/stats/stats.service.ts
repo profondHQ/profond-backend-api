@@ -1,9 +1,9 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { PG_CONNECTION } from "src/constants";
+import { PG_CONNECTION } from "../constants";
 
 @Injectable()
 export class StatsService {
-  constructor(@Inject(PG_CONNECTION) private conn: any) {}
+  constructor(@Inject(PG_CONNECTION) private conn: any) { }
 
   async findAll(
     wallet_address?: string,

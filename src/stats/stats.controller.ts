@@ -3,7 +3,7 @@ import { StatsService } from "./stats.service";
 
 @Controller("stats")
 export class StatsController {
-  constructor(private readonly statsService: StatsService) {}
+  constructor(private readonly statsService: StatsService) { }
 
   @Get("/coin/:coin_address")
   findStats(@Param("coin_address") coin_address) {
